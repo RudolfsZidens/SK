@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Clicker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        #cookieButton {
+            font-size: 24px;
+            padding: 20px 40px;
+            border: none;
+            border-radius: 8px;
+            background-color: #ffcc00;
+            color: #333;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        #cookieButton:hover {
+            background-color: #ffaa00;
+        }
+        #cookieCount {
+            font-size: 32px;
+            color: #555;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cookie Clicker</h1>
+        <div id="cookieCount">Cookies: 0</div>
+        <button id="cookieButton">Click me!</button>
+    </div>
+
+    <script>
+        // Initialize cookie count
+        let cookieCount = 0;
+
+        // Get elements
+        const cookieCountElement = document.getElementById('cookieCount');
+        const cookieButton = document.getElementById('cookieButton');
+
+        // Update cookie count display
+        function updateCookieCount() {
+            cookieCountElement.textContent = `Cookies: ${cookieCount}`;
+        }
+
+        // Button click handler
+        cookieButton.addEventListener('click', () => {
+            cookieCount++;
+            updateCookieCount();
+        });
+
+        // Initial update
+        updateCookieCount();
+    </script>
+</body>
+</html>
